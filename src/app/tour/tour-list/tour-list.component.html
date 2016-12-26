@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="card-deck-wrapper">
+    <div class="card-deck">
+      <div class="card " *ngFor="let tour of tourList">
+        <img class="card-img-top" width="100%" [src]="tour.imgurl" alt="tour.name">
+        <div class="card-block">
+          <h4 class="card-title">{{tour.name}}</h4>
+          <h6 class="card-subtitle text-muted">
+            <span>地點：{{tour.location}}</span>
+          </h6>
+          <p class="card-text">價錢：{{tour.price | currency:'TWD'}}</p>
+          <a href="#" class="btn btn-primary">檢視</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
