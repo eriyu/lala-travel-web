@@ -1,15 +1,18 @@
 <div class="container-fluid">
-  <div class="card-deck-wrapper">
-    <div class="card-deck">
-      <div class="card " *ngFor="let ticket of ticketList">
-        <img class="card-img-top" width="100%" [src]="ticket.imgurl" alt="ticket.name">
-        <div class="card-block">
-          <h4 class="card-title">{{ticket.name}}</h4>
-          <p class="card-text">價錢：{{ticket.price | currency:ticket.currency}}</p>
-          <p class="card-text">使用期限：{{ticket.startdate}}～{{ticket.enddate}}</p>
-          <a href="#" class="btn btn-primary">檢視</a>
+    <div class="card-deck-wrapper">
+        <div class="card-deck">
+            <div class="card " *ngFor="let ticket of ticketList">
+                <img class="card-img-top" width="100%" [src]="ticket.imgurl" alt="ticket.name">
+                <div class="card-block">
+                    <h4 class="card-title">{{ticket.name}}</h4>
+                    <p>
+                        <app-rating [rating]="ticket.rating" [max]="5"></app-rating>
+                    </p>
+                    <p class="card-text">價錢：{{ticket.price | currency:ticket.currency}}</p>
+                    <p class="card-text">使用期限：{{ticket.startdate}}～{{ticket.enddate}}</p>
+                    <a href="#" class="btn btn-primary">檢視</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
