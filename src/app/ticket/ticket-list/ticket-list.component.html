@@ -9,6 +9,9 @@
                         <app-rating [rating]="ticket.rating" [max]="5"></app-rating>
                     </p>
                     <p class="card-text">價錢：{{ticket.price | currency:ticket.currency}}</p>
+                    <p>
+                      <app-exchange-rate [from]="ticket.currency" [sourceMoney]="ticket.price"></app-exchange-rate>
+                    </p>
                     <p class="card-text">使用期限：{{ticket.startdate}}～{{ticket.enddate}}</p>
                     <a href="#" class="btn btn-primary">檢視</a>
                 </div>
